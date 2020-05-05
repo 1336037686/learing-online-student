@@ -31,10 +31,11 @@ const actions = {
    * @returns {Promise<void>}
    */
   async doLogin({dispatch, commit}, data) {
+
     commit("SET_LOGIN_LODING", true)
-    await axios.post("/api/v1/teacher/login", {"body":{"data": data}}).then(response => {
+    await axios.post("/api/v1/student/login", {"body":{"data": data}}).then(response => {
       if(response.data.head.responseCode != "200") {
-        Notice.error({title: response.data.head.message , desc: ''});
+        Notice.error({title: response.data.head.message , desc: '', top: 100});
       } else {
         commit("SET_DATA", response.data.body.data)
         Notice.success({title: response.data.head.message , desc: ''});

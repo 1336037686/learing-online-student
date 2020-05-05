@@ -32,9 +32,20 @@
               </Row>
             </MenuItem>
           </div>
-          <MenuItem name="6" class="login-btn">
-            登录
+          <MenuItem name="6" class="login-btn" v-if="$store.state.loginManage.userName === '' && $store.state.loginManage.token === ''">
+            <router-link to="/login" style="color: #f5f7f9">登录</router-link>
           </MenuItem>
+          <Dropdown style="float: right;margin-right: 40px" v-if="$store.state.loginManage.userName !== '' && $store.state.loginManage.token !== ''">
+            <a href="javascript:void(0)">
+              <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" />
+              <span style="color: #f5f7f9">{{$store.state.loginManage.userName}}</span>
+              <Icon type="ios-arrow-down" style="color: #f5f7f9"/>
+            </a>
+            <DropdownMenu slot="list">
+              <router-link to="/userCenter"><DropdownItem>个人中心</DropdownItem></router-link>
+              <DropdownItem><span @click="logout">退出</span></DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
         </Menu>
       </Header>
       <!--内容 主体-->
@@ -67,6 +78,12 @@
           return
         }
         this.$router.push("/jumpPage/" + this.selectContent.trim() + "?type=selectCourse")
+      },
+      logout() {
+        this.$store.dispatch("loginManage/doLogout").then(() => {
+          this.$Notice.info({title:"退出成功", desc: ''})
+          this.$router.push("/")
+        })
       }
     }
   }

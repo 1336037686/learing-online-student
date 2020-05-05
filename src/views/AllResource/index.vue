@@ -39,6 +39,9 @@
       </Row>
       <!--资源展示-->
       <Drawer title="资源展示" :closable="false" v-model="showResourceModelState" width="25%">
+        <Card  style="margin-top: 10px">
+          资源列表
+        </Card>
         <Collapse style="margin-top: 10px">
           <Panel :name="key" v-for="(value, key) in $store.state.resourceManage.resourceData" :key="key">
             <Tag color="primary">章节</Tag>

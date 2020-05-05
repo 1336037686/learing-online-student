@@ -7,6 +7,9 @@ import Course from '@/views/AllCourse/index.vue'
 import SelectCourse from '@/views/SelectCourse/index.vue'
 import JumpPage from '@/views/JumpPage/index.vue'
 import Resource from '@/views/AllResource/index.vue'
+import Login from '@/views/Login/index.vue'
+import UserCenter from  '@/views/UserCenter/index.vue'
+import UserAccountManage from '@/views/UserAccountManage/index.vue'
 
 Vue.use(Router)
 
@@ -47,8 +50,26 @@ export default new Router({
           path: 'resource/:type',
           name: 'resource',
           component: Resource,
+        },
+        {
+          path: 'userCenter',
+          name: 'UserCenter',
+          component: UserCenter,
+          redirect: '/userCenter/userAccountManage',
+          children: [
+            {
+              path: '/userCenter/userAccountManage',
+              name: 'UserAccountManage',
+              component: UserAccountManage,
+            },
+          ]
         }
       ]
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login,
     }
   ]
 })
