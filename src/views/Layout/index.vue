@@ -53,7 +53,7 @@
         <router-view/>
       </Content>
       <!--页尾-->
-      <Footer class="layout-footer-center">2011-2016 &copy; TalkingData</Footer>
+      <Footer class="layout-footer-center">2011-2016 &copy; TalkingData <br> <a href="http://localhost:9091/#/" target="_blank">智多星教师管理后台</a> | <a href="http://localhost:9090/#/" target="_blank">智多星管理员后台</a></Footer>
     </Layout>
   </div>
 </template>

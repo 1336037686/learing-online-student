@@ -14,7 +14,7 @@
             </Col>
           </Row>
         </TabPane>
-        <TabPane label="已完成作业" name="name2">
+        <TabPane label="已完成考试" name="name2">
           <Row>
             <Col span="4" style="padding: 5px" v-for="(value, index) in $store.state.courseManage.courseExamData.pass" :key="index">
               <Card>
