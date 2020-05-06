@@ -32,6 +32,7 @@
                 <img :src="k.cover" width="180" height="180" @click="showCourseDetail(k.id)">
                 <h4 @click="showCourseDetail(k.id)">{{k.name}}</h4>
                 <h5 @click="showCourseDetail(k.id)">{{select === 'all' ? k.teacherName: k.teacher}}</h5>
+                <h6 @click="showCourseDetail(k.id)">课程编号: {{k.id}}</h6>
               </div>
             </Card>
           </Col>

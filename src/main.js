@@ -6,10 +6,17 @@ import router from './router'
 import ViewUI from 'view-design';
 import store from './store'
 import 'view-design/dist/styles/iview.css';
-import {Notice} from 'view-design';
+import {Notice, Message} from 'view-design';
+
+import VideoPlayer from 'vue-video-player'
+import 'vue-video-player/src/custom-theme.css'
+import 'video.js/dist/video-js.css'
+// 添加视频组件
+Vue.use(VideoPlayer)
 
 // 配置全局弹框
 Notice.config({top: 70, duration: 3});
+Message.config({top: 70, duration: 3});
 
 Vue.use(ViewUI);
 

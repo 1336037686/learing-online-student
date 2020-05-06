@@ -1,24 +1,20 @@
 <template>
   <Row style="margin-top: 20px">
     <Col span="4" offset="1">
-      <Menu theme="light" active-name="1">
+      <Menu theme="light" active-name="2">
         <MenuGroup title="个人中心">
-          <MenuItem name="1">
-            <Icon type="md-document" />
-            账号管理
-          </MenuItem>
-          <MenuItem name="2">
-            <Icon type="ios-book" />
-            课程管理
-          </MenuItem>
-          <MenuItem name="3">
-            <Icon type="ios-brush" />
-            作业管理
-          </MenuItem>
-          <MenuItem name="4">
-            <Icon type="ios-cog" />
-            考试管理
-          </MenuItem>
+          <router-link to="/userCenter/userAccountManage" style="color: #515a6e">
+            <MenuItem name="1">
+              <Icon type="md-document" />
+              账号管理
+            </MenuItem>
+          </router-link>
+          <router-link to="/userCenter/courseManage" style="color: #515a6e">
+            <MenuItem name="2">
+              <Icon type="ios-book" />
+              课程管理
+            </MenuItem>
+          </router-link>
         </MenuGroup>
       </Menu>
     </Col>
@@ -30,7 +26,7 @@
 
 <script>
     export default {
-        name: "index"
+        name: "index",
     }
 </script>
 

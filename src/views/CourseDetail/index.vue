@@ -60,7 +60,11 @@
           alert("请先登录!!!")
           return
         }
-        alert(value)
+        this.$store.dispatch("userInfo/doQueryUserInfoById").then(() => {
+          this.$store.dispatch("courseManage/doSave", {"student": this.$store.state.userInfo.userInfo.userName, "course": value}).then(() => {
+            this.$router.push("/userCenter/courseManage")
+          })
+        })
       }
     }
   }
